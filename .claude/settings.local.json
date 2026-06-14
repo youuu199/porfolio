@@ -5,7 +5,10 @@
       "Bash(npm ls *)",
       "Bash(rm -f src/assets/react.svg public/vite.svg)",
       "Bash(ls src/assets/)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(git add *)",
+      "Bash(git commit -m 'docs: update README with portfolio details and usage instructions *)",
+      "Bash(git push *)"
     ]
   }
 }

@@ -1,10 +1,12 @@
+import avatarImg from '../assets/avatar.png'
+
 export const personalInfo = {
   name: 'Zar Ni Thway',
   title: 'Backend Developer',
   tagline: 'Building reliable backend systems — one query at a time',
   email: 'zarnithway.dev@gmail.com',
   location: 'Yangon, Myanmar',
-  avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
+  avatar: avatarImg,
   resumeUrl: '#',
 }
 
