@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npm ls *)",
+      "Bash(rm -f src/assets/react.svg public/vite.svg)",
+      "Bash(ls src/assets/)",
+      "Bash(npm run *)"
+    ]
+  }
+}
