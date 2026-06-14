@@ -1,16 +1,67 @@
-# React + Vite
+# Portfolio — Zar Ni Thway
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio website built with **React + Vite**, styled with **Tailwind CSS**, and animated with **Framer Motion**.
 
-Currently, two official plugins are available:
+## Sections
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Hero** — Full-viewport intro with avatar, tagline, and CTAs
+- **About** — Bio, NCC diploma highlights, and key stats
+- **Skills** — Filterable skill bars by category (Backend, Database, Frontend, Languages, DevOps)
+- **Projects** — Showcase of my 3 main projects (POS System, Giga Chad Store, Food Fusion)
+- **Education** — NCC Level 4 & 5 Diploma in Computing timeline
+- **Contact** — Validated contact form with email and social links
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Layer | Technology |
+|---|---|
+| Framework | React 19 |
+| Build Tool | Vite |
+| Styling | Tailwind CSS v4 |
+| Animation | Framer Motion |
+| Forms | Custom controlled form with validation |
+| Deployment | Static build (`dist/`) |
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## Customize
+
+All portfolio content lives in one file — edit `src/data/portfolio.js` to update:
+
+- Personal info (name, title, email, location)
+- Social links
+- Bio and highlights
+- Skills and proficiency levels
+- Projects and descriptions
+- Education timeline
+- Navigation links
+
+## Deploy
+
+```bash
+npm run build
+```
+
+Deploy the `dist/` folder to any static host:
+
+- [Netlify](https://netlify.com)
+- [Vercel](https://vercel.com)
+- [GitHub Pages](https://pages.github.com)
+
+## License
+
+MIT
