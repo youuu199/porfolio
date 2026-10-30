@@ -43,8 +43,8 @@
 No build tools needed — just serve the folder:
 
 ```bash
-git clone https://github.com/zarnithway/portfolio.git
-cd portfolio
+git clone https://github.com/youuu199/porfolio.git
+cd porfolio
 
 # Option 1: any static server
 npx serve .
