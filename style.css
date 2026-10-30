@@ -445,7 +445,8 @@ button {
   left: 22px;
   border-right: none;
   border-bottom: none;
-  border-top-left-radius: 8px;
+  /* Concentric with the panel's 32px corner (22px offset + 10px radius) */
+  border-top-left-radius: 10px;
 }
 
 .hero-panel::after {
@@ -453,7 +454,7 @@ button {
   right: 22px;
   border-left: none;
   border-top: none;
-  border-bottom-right-radius: 8px;
+  border-bottom-right-radius: 10px;
 }
 
 .hero-bg-blobs {
@@ -1598,7 +1599,7 @@ button {
     flex-direction: column;
     align-items: stretch;
     gap: 4px;
-    padding: 24px 20px calc(28px + env(safe-area-inset-bottom));
+    padding: 24px 16px calc(28px + env(safe-area-inset-bottom));
     background-color: var(--nav-bg-solid);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
@@ -1755,10 +1756,24 @@ button {
     border-radius: 24px;
   }
 
+  /* Corner brackets tuck into the panel gutters on mobile —
+     they must not cross the image card (image starts at 44px/28px) */
   .hero-panel::before,
   .hero-panel::after {
-    width: 40px;
-    height: 40px;
+    width: 26px;
+    height: 26px;
+  }
+
+  .hero-panel::before {
+    top: 10px;
+    left: 10px;
+    border-top-left-radius: 8px;
+  }
+
+  .hero-panel::after {
+    bottom: 10px;
+    right: 10px;
+    border-bottom-right-radius: 8px;
   }
 
   .hero-grid {
@@ -1856,15 +1871,15 @@ button {
 
 @media (max-width: 640px) {
   .container {
-    padding: 0 20px;
+    padding: 0 14px;
   }
 
   .nav-container {
-    padding: 0 20px;
+    padding: 0 14px;
   }
 
   .hero {
-    padding: 118px 20px 72px;
+    padding: 118px 14px 72px;
   }
 
   .hero-actions {
