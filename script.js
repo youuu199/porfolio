@@ -72,28 +72,39 @@
   const navLinks = document.querySelector(".nav-links");
 
   if (navToggle && navLinks) {
-    navToggle.addEventListener("click", function () {
-      const isOpen = navLinks.classList.toggle("open");
+    const setNavOpen = function (isOpen) {
+      navLinks.classList.toggle("open", isOpen);
       navToggle.classList.toggle("open", isOpen);
       navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      document.body.classList.toggle("nav-open", isOpen);
+    };
+
+    navToggle.addEventListener("click", function () {
+      setNavOpen(!navLinks.classList.contains("open"));
     });
 
     // Close menu when a link is tapped
     navLinks.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", function () {
-        navLinks.classList.remove("open");
-        navToggle.classList.remove("open");
-        navToggle.setAttribute("aria-expanded", "false");
+        setNavOpen(false);
       });
+    });
+
+    // Tap on empty menu background closes it
+    navLinks.addEventListener("click", function (e) {
+      if (e.target === navLinks) setNavOpen(false);
+    });
+
+    // Escape closes the menu
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && navLinks.classList.contains("open")) {
+        setNavOpen(false);
+      }
     });
 
     // Close menu if the viewport is resized to desktop
     window.addEventListener("resize", function () {
-      if (window.innerWidth > 900) {
-        navLinks.classList.remove("open");
-        navToggle.classList.remove("open");
-        navToggle.setAttribute("aria-expanded", "false");
-      }
+      if (window.innerWidth > 900) setNavOpen(false);
     });
   }
 
@@ -147,7 +158,7 @@
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
             const id = entry.target.id;
-            document.querySelectorAll(".nav-links a").forEach(function (a) {
+            document.querySelectorAll(".nav-links > li:not(.nav-mobile-footer) > a").forEach(function (a) {
               const isActive = a.getAttribute("href") === "#" + id;
               a.classList.toggle("active", isActive);
             });
